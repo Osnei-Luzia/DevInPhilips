@@ -3,8 +3,8 @@ function progressao(){
     const raiz = parseFloat(prompt("Insira a raiz"));
     let pa = `${valor}`
     if(!isNaN(valor)&&!isNaN(raiz)){
-        for(let cont=1;cont<11;cont++){
-            pa += `, ${raiz*cont}`
+        for(let cont=1;cont<10;cont++){
+            pa += `, ${valor+(raiz*cont)}`
         }
         alert(`Valor inicial = ${valor}; Raiz = ${raiz}; P.A = ${pa}`)
     }else{
