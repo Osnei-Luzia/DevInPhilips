@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevinInHouse</title>
+</head>
+<style>
+   /*css*/
+</style>
+<link rel="stylesheet" href="style.css">
+<body>
+    <nav>
+        <ol>
+            <li id="vermelho"><a href="link">Inicio</a></li>
+            <li><a href="link">Sobre</a></li>
+            <li><a href="link">Contato</a></li>
+        </ol>
+        <ul>
+            <li><a href="link"></a></li>
+            <li><a href="link"></a></li>
+            <li><a href="link"></a></li>
+        </ul>
+    </nav>
+    <form action="URL" method="get"><!--Get na url, post coloca sem mostrar-->
+        <label for="nome1">Nome: </label>
+        <input 
+            id="nome1"
+            name="nome" 
+            type="text" 
+            placeholder="Digite um Nome"
+            required
+        />
+        <input type="date" disabled>
+        <input type="email">
+        <select name="Cidades" id="cidade">
+            <optgroup label="Perto">
+                <option value="camboriu">Camboriú</option>
+                <option value="itajai">Itajaí</option>
+            </optgroup>
+            <optgroup label="Distante">
+                <option value="florianopolis">Florianópolis</option>
+                <option value="blumenau">Blumenau</option>
+            </optgroup>
+        </select>
+        <input type="radio" name="escolha"></input>
+        <input type="radio" name="escolha"></input>
+        <input type="submit" value="Enviar">
+        <!--ID para html, name para nome do conteúdo-->
+    </form>
+</body>
+
+</html>

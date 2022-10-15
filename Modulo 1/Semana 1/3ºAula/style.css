@@ -1,0 +1,10 @@
+/*
+    .classe
+    #id
+*/
+li.vermelho{
+    color:red;
+    text-decoration: dotted;
+    background-repeat: no-repeat;
+    background-size:cover;
+}

@@ -1,0 +1,24 @@
+article{
+    position:absolute;
+    position:relative
+}
+div{
+    position:fixed;
+    top: 0;
+}
+
+
+#grid{
+    border: 2px dashed;
+    display:grid;
+
+    grid-template-columns: 30px,30px,30px;
+    grid-template-rows: 30px,30px,30px;
+
+    /*shorthand -- grid: 30px,30px,30px / 45px,45px,45px*/
+}
+
+/*
+    fixed relativo ao viewport
+    absolute
+*/
