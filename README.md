@@ -1,2 +1,2 @@
 # DevInPhillips
-Repositório para atividades.
+Repositório para atividades do curso DevInPhillips.
