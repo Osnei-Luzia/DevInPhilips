@@ -1,0 +1,1 @@
+const mensagemOla = () => document.getElementsByTagName("p")[0].innerText =`Olá, ${document.getElementsByTagName(`input`)[0].value}!`
