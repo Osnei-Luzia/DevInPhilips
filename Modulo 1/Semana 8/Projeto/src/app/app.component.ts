@@ -16,6 +16,5 @@ export class AppComponent {
     }else{
       args.lido = true
     }
-    console.log(args.lido)
   }
 }
