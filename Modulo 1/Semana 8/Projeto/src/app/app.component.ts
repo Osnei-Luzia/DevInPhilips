@@ -9,4 +9,13 @@ import { NOTIFICACOES } from './mocks/mocks';
 export class AppComponent {
   title = 'Projeto';
   notificacoes = NOTIFICACOES
+  notificacao = this.notificacoes[0]
+  ler(args : any){
+    if(args.lido){
+      args.lido = false
+    }else{
+      args.lido = true
+    }
+    console.log(args.lido)
+  }
 }
