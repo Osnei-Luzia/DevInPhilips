@@ -3,26 +3,26 @@
 <ol class="list-group list-group-numbered">
   <li class="list-group-item d-flex justify-content-between align-items-start">
     <div class="ms-2 me-auto">
-      <div class="fw-bold">Titulo</div>
-      Subtitulo
+      <div class="fw-bold">{{conteudo[0].titulo}}</div>
+      {{conteudo[0].subtitulo}}
     </div>
-    <p>00/00/0000</p>
+    <p>{{conteudo[0].data.getDate()}}/{{conteudo[0].data.getMonth()+1}}/{{conteudo[0].data.getFullYear()}}</p>
     <!-- <span class="badge bg-primary rounded-pill">14</span> -->
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-start">
     <div class="ms-2 me-auto">
-      <div class="fw-bold">Titulo</div>
-      Subtitulo
+      <div class="fw-bold">{{conteudo[1].titulo}}</div>
+      {{conteudo[1].subtitulo}}
     </div>
-    <p>00/00/0000</p>
+    <p>{{conteudo[1].data.getDate()}}/{{conteudo[1].data.getMonth()+1}}/{{conteudo[1].data.getFullYear()}}</p>
     <!-- <span class="badge bg-primary rounded-pill">14</span> -->
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-start">
     <div class="ms-2 me-auto">
-      <div class="fw-bold">Titulo</div>
-      Subtitulo
+      <div class="fw-bold">{{conteudo[2].titulo}}</div>
+      {{conteudo[2].subtitulo}}
     </div>
-    <p>00/00/0000</p>
+    <p>{{conteudo[2].data.getDate()}}/{{conteudo[2].data.getMonth()+1}}/{{conteudo[2].data.getFullYear()}}</p>
     <!-- <span class="badge bg-primary rounded-pill">14</span> -->
   </li>
 </ol>
