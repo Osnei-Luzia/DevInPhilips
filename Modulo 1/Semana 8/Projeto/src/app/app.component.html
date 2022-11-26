@@ -9,8 +9,8 @@
       {{notificacao.subtitulo}}
       <div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"
-          (click)="ler(notificacao)">
+          <input class="form-check-input" type="checkbox" value=""
+          (change)="ler(notificacao)">
           <label class="form-check-label" for="defaultCheck1">
             {{notificacao.lido?"Lido":"Não Lido"}}
           </label>
