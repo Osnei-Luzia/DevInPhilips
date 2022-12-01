@@ -39,7 +39,8 @@
     </div>
 
     <div class="mb-3 p-2">
-        <button type="submit" class="btn btn-primary m-1" >Submit</button>
+        <button (click)="enviar($event)" type="submit" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Submit</button>
         <button type="reset" class="btn btn-danger m-1">Reset</button>
     </div>
 </form>
+<app-modal></app-modal>
