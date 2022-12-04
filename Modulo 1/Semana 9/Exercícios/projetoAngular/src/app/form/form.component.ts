@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,Inject } from '@angular/core';
+import {ControladorEnviosService} from '../controlador-envios.service'
 
 @Component({
   selector: 'app-form',
@@ -6,7 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
-  enviar(evento : any){
+  constructor(private servicos : ControladorEnviosService){
+  }
+  data = {
+    materia: "",
+    cargaHoraria: ""
+  }
+  enviar(evento: any) {
     evento.preventDefault()
+    this.servicos.setData(this.data)
+    console.log(this.servicos.getData())
   }
 }
+

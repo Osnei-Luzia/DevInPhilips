@@ -2,11 +2,11 @@
     <div class="container row">
         <div class="mb-3 col-9">
             <label for="materia" class="form-label">Matéria</label>
-            <input type="text" class="form-control" id="materia">
+            <input name="materia" [(ngModel)] = "data.materia" type="text" class="form-control" id="materia">
         </div>
         <div class="mb-3 col-3">
             <label for="cargaHoraria" class="form-label">Carga Horaria</label>
-            <input type="text" class="form-control" id="cargaHoraria">
+            <input name="cargaHoraria" [(ngModel)] = "data.cargaHoraria" type="text" class="form-control" id="cargaHoraria">
         </div>
     </div>
     <div class="container row">
