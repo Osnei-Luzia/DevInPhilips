@@ -7,6 +7,7 @@ import { ModalComponent } from './modal/modal.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ItemCardComponent } from './item-card/item-card.component';
 import { FormsModule } from '@angular/forms';
+import { BuscaComponent } from './busca/busca.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     FormComponent,
     ModalComponent,
     NavbarComponent,
-    ItemCardComponent
+    ItemCardComponent,
+    BuscaComponent
   ],
   imports: [
     BrowserModule,

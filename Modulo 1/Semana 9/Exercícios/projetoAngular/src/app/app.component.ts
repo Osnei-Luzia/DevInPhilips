@@ -14,4 +14,7 @@ export class AppComponent {
     descricao:
       'Ator britânico. É mais conhecido por interpretar Jon Snow na     série televisiva Game of Thrones da HBO. Meu marido, mas ele não sabe U.u',
   }  
+  imprime(evento:any){
+    console.log(evento)
+  }
 }
