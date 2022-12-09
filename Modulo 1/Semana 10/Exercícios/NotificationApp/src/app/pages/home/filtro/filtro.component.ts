@@ -11,7 +11,6 @@ export class FiltroComponent {
   ]
   @Output() lista: EventEmitter<string> = new EventEmitter()
   filtragem(evento: any) {
-    this.lista.emit()
-    console.log("Teste")
+    this.lista.emit(evento)
   }
 }
