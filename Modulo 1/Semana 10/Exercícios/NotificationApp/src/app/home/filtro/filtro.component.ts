@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'noteApp-filtro',
@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./filtro.component.scss']
 })
 export class FiltroComponent {
-  filtros : string[] = [
-    "Todos","Lidos","Não Lidos"
+  filtros: string[] = [
+    "Todos", "Lidos", "Não Lidos"
   ]
+  @Output() lista: EventEmitter<string> = new EventEmitter()
+  filtragem(evento: any) {
+    this.lista.emit()
+    console.log("Teste")
+  }
 }
