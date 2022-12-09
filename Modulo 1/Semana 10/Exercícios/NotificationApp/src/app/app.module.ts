@@ -5,14 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { FiltroComponent } from './home/filtro/filtro.component';
+import { FiltroComponent } from './pages/home/filtro/filtro.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    FiltroComponent
+    FiltroComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
