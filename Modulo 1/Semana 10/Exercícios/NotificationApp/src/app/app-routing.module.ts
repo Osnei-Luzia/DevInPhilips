@@ -5,9 +5,9 @@ import { HomeComponent } from './pages/home/home/home.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
-  {path:'home/:todos',component:HomeComponent},
-  {path:'home/:lidos',component:HomeComponent},
-  {path:'home/:nao-lidos',component:HomeComponent},
+  {path:'home/todos',component:HomeComponent,data:{status: 'todos'}},
+  {path:'home/lidos',component:HomeComponent,data:{status: 'lidos'}},
+  {path:'home/naolidos',component:HomeComponent,data:{status: 'nao-lidos'}},
   {path:'about',component:AboutComponent},
   {path:'',component:HomeComponent}
 ];

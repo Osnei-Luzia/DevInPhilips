@@ -6,8 +6,18 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./filtro.component.scss']
 })
 export class FiltroComponent {
-  filtros: string[] = [
-    "Todos", "Lidos", "Não Lidos"
+  filtros = [
+    {
+      nome: "Todos",
+      endereco: "todos"
+    },
+    {
+      nome: "Lidos",
+      endereco: "lidos"
+    },{
+      nome: "Não Lidos",
+      endereco: "naolidos"
+    },
   ]
   @Output() lista: EventEmitter<string> = new EventEmitter()
   filtragem(evento: any) {

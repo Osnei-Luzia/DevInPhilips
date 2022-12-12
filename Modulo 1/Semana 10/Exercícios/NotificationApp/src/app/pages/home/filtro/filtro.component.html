@@ -1,5 +1,6 @@
 <div class="btn-group">
-    <label *ngFor="let filtro of filtros" class="btn btn-secondary" (click)=filtragem($event) id={{filtro}}>
-        {{filtro}}
+    <label *ngFor="let filtro of filtros" class="btn btn-secondary"
+     (click)=filtragem($event) id={{filtro.endereco}}>
+        {{filtro.nome}}
     </label>
 </div>

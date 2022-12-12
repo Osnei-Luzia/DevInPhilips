@@ -10,6 +10,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home/home.component';
 import { ContentComponent } from './pages/home/content/content.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,7 @@ import { ContentComponent } from './pages/home/content/content.component';
     FiltroComponent,
     AboutComponent,
     HomeComponent,
-    ContentComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
