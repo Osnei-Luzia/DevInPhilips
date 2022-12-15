@@ -1,0 +1,14 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand">Brand Name</a>
+        <nav>
+            <button *ngFor="let button of pages" class="btn btn-sm btn-outline-secondary" type="button"
+            (click)="endereco = button">{{button|captalizePhillips}}</button>
+        </nav>
+    </div>
+</nav>
+<div [ngSwitch]="endereco">
+    <h2 *ngSwitchCase="'home'">Estou na página de Home</h2>
+    <h2 *ngSwitchCase="'preços'">Estou na página de Preços</h2>
+    <h2 *ngSwitchCase="'informações'">Estou na página de Informações</h2>
+</div>

@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CaptalizePhillipsPipe } from './pipes/captalize-phillips.pipe';
 import { GenericComponent } from './generic/generic.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CaptalizePhillipsPipe,
-    GenericComponent
+    GenericComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
