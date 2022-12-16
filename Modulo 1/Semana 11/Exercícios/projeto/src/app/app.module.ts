@@ -7,6 +7,7 @@ import { CaptalizePhillipsPipe } from './pipes/captalize-phillips.pipe';
 import { GenericComponent } from './generic/generic.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CardsComponent } from './cards/cards.component';
+import { NgIfcomponentComponent } from './ng-ifcomponent/ng-ifcomponent.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CardsComponent } from './cards/cards.component';
     CaptalizePhillipsPipe,
     GenericComponent,
     NavbarComponent,
-    CardsComponent
+    CardsComponent,
+    NgIfcomponentComponent
   ],
   imports: [
     BrowserModule,
