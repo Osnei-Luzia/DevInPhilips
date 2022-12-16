@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { CaptalizePhillipsPipe } from './pipes/captalize-phillips.pipe';
 import { GenericComponent } from './generic/generic.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CardsComponent } from './cards/cards.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CaptalizePhillipsPipe,
     GenericComponent,
-    NavbarComponent
+    NavbarComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
