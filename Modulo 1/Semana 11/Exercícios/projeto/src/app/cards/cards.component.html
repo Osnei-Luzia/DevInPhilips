@@ -1,8 +1,9 @@
 <div class="content row">
-    <div *ngFor="let cards of arrayFotos" class="card" style="width: 18rem;">
-        <img src={{cards.url}} class="card-img-top" style="height: 10rem" alt="{{cards.description}}">
-        <div class="card-body">
-            <p class="card-text">{{cards.description}}</p>
-        </div>
+    <!-- <div *ngFor="let cards of arrayFotos" class="card" style="width: 18rem;"> -->
+    <div class="card" style="width: 18rem;">
+        <ng-content select=".card-title"></ng-content>
+        <ng-content select="#subtitulo"></ng-content>
+        <hr>
+        <ng-content select=".card-body"></ng-content>
     </div>
 </div>
