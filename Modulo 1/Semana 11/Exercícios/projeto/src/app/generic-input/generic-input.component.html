@@ -1,0 +1,14 @@
+<div class="container">
+    <form>
+        <div class="mb-3">
+            <label for="input" class="form-label">Password</label>
+            <input type="password" class="form-control" name="input" [(ngModel)]="inputPassword">
+        </div>
+        <div *ngIf="password==inputPassword; else templateElse">
+            <p class="text-success">Senha Correta</p>
+        </div>
+        <ng-template #templateElse>
+            <p class="text-danger">Senha Incorreta</p>
+        </ng-template>
+    </form>
+</div>
