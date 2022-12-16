@@ -1,0 +1,20 @@
+<form (ngSubmit)="salvar()" class="container">
+    <!--Acabei não usando o form para validar o input-->
+    <div class="mb-3">
+        <label class="form-label">Tarefa</label>
+        <input [(ngModel)]="inputTarefa" name="formInput" class="form-control" required>
+        <div></div>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+<div class="container">
+    <ul *ngIf="listagem.length; else emptyList" class="list-group">
+        <li *ngFor="let tarefa of listagem; let i = index" class="list-group-item">
+            <p>{{tarefa}}</p>
+            <button (click)="remover($event)" id={{i}} class="btn small btn-secondary btn-sm">Remover</button>
+        </li>
+    </ul>
+    <ng-template #emptyList>
+        <p class="text-center">Lista vazia</p>
+    </ng-template>
+</div>

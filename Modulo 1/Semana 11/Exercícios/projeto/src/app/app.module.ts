@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CardsComponent } from './cards/cards.component';
 import { NgIfcomponentComponent } from './ng-ifcomponent/ng-ifcomponent.component';
 import { GenericInputComponent } from './generic-input/generic-input.component';
+import { ListaComponent } from './lista/lista.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { GenericInputComponent } from './generic-input/generic-input.component';
     NavbarComponent,
     CardsComponent,
     NgIfcomponentComponent,
-    GenericInputComponent
+    GenericInputComponent,
+    ListaComponent
   ],
   imports: [
     BrowserModule,
