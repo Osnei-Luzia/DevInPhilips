@@ -6,6 +6,7 @@ public class Main {
         //exercicio4.metodo();
         //exercicio5.metodo();
         //exercicio6.metodo();
-        exercicio7.metodo();
+        //exercicio7.metodo();
+        exercicio8.metodo();
     }
 }
