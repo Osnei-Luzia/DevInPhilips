@@ -9,8 +9,8 @@ public class exercicio4 {
                 {55, 43, 25, 12,  7, 11}
         };
         int count = 0;
-        for(int i=0;i<4;i++){
-            for(int j=0;j<4;j++){
+        for(int i=0;i<sorteados.length;i++){
+            for(int j=0;j<sorteados[i].length;j++){
                 if(sorteados[i][j]==25){
                     count++;
                 }
