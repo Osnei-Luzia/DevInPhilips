@@ -8,19 +8,21 @@ public class Clinica {
     String cnpj;
     String endereco;
     String id;
-    List<Object> clientes = new ArrayList<>();
+    List<Cliente> clientes = new ArrayList<>();
 
     public Clinica(String dono){
         this.dono = dono;
     }
-    public Clinica(String dono, List<Object> clientes){
+    public Clinica(String dono, List<Cliente> clientes){
         this.dono = dono;
         this.clientes = clientes;
     }
 
     public void adicionarCliente(){
         Scanner scanner = new Scanner(System.in);
-        Cliente cliente = new Cliente(0,0);
+        Cliente cliente = new Cliente(0,0,"");
+        System.out.println("Informe o Nome do cliente.");
+        cliente.setNome(scanner.nextLine());
         System.out.println("Informe o Peso do cliente. Eg: 80,0");
         cliente.setPeso(scanner.nextDouble());
         System.out.println("Informe a Altura do cliente. Eg: 1,80");
@@ -35,6 +37,11 @@ public class Clinica {
     public void tratamento(Cliente cliente,double reducao){
         cliente.setPeso(cliente.getPeso()-reducao);
         System.out.println("Peso do cliente reduzido para: "+cliente.peso);
+    }
+    public void listarClientes(){
+        for(Cliente cliente:clientes){
+            System.out.println(cliente.nome);
+        }
     }
     static Double calcIMC(Double peso, Double altura){
         Double imc = peso/(altura*altura);
