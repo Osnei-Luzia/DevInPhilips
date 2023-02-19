@@ -10,9 +10,17 @@ public class Clinica {
     String id;
     List<Object> clientes = new ArrayList<>();
 
+    public Clinica(String dono){
+        this.dono = dono;
+    }
+    public Clinica(String dono, List<Object> clientes){
+        this.dono = dono;
+        this.clientes = clientes;
+    }
+
     public void adicionarCliente(){
         Scanner scanner = new Scanner(System.in);
-        Cliente cliente = new Cliente();
+        Cliente cliente = new Cliente(0,0);
         System.out.println("Informe o Peso do cliente. Eg: 80,0");
         cliente.setPeso(scanner.nextDouble());
         System.out.println("Informe a Altura do cliente. Eg: 1,80");

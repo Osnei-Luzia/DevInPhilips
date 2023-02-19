@@ -3,6 +3,15 @@ public class Cliente {
     double altura;
     Integer idade;
 
+    public Cliente(double peso, double altura){
+        this.peso = peso;
+        this.altura = altura;
+    }
+    public Cliente(double peso, double altura, Integer idade){
+        this.peso = peso;
+        this.altura = altura;
+        this.idade = idade;
+    }
     public double getPeso(){
         return peso;
     }
