@@ -40,7 +40,7 @@ public class Clinica {
     }
     public void listarClientes(){
         for(Cliente cliente:clientes){
-            System.out.println(cliente.nome);
+            System.out.println(cliente.getNome());
         }
     }
     static Double calcIMC(Double peso, Double altura){
