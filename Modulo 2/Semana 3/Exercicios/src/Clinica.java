@@ -32,11 +32,11 @@ public class Clinica {
     }
     public void tratamento(Cliente cliente){
         cliente.setPeso(cliente.getPeso()-5);
-        System.out.println("Peso do cliente reduzido para: "+cliente.peso);
+        System.out.println("Peso do cliente reduzido para: "+cliente.getPeso());
     }
     public void tratamento(Cliente cliente,double reducao){
         cliente.setPeso(cliente.getPeso()-reducao);
-        System.out.println("Peso do cliente reduzido para: "+cliente.peso);
+        System.out.println("Peso do cliente reduzido para: "+cliente.getPeso());
     }
     public void listarClientes(){
         for(Cliente cliente:clientes){

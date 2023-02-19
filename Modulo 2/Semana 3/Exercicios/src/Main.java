@@ -3,7 +3,7 @@ public class Main {
         Clinica clinica = new Clinica("Dono");
         clinica.adicionarCliente();
         clinica.adicionarCliente();
-        //clinica.tratamento((Cliente) clinica.clientes.get(0),25);
+        clinica.tratamento(clinica.clientes.get(0),25);
         clinica.listarClientes();
     }
 }
