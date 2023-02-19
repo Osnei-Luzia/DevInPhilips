@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-public class clinica {
+public class Clinica {
     String dono;
     String nome;
     String cnpj;
@@ -9,6 +10,16 @@ public class clinica {
     String id;
     List<Object> clientes = new ArrayList<>();
 
+    public void adicionarCliente(){
+        Scanner scanner = new Scanner(System.in);
+        Cliente cliente = new Cliente();
+        System.out.println("Informe o Peso do cliente. Eg: 80,0");
+        cliente.setPeso(scanner.nextDouble());
+        System.out.println("Informe a Altura do cliente. Eg: 1,80");
+        cliente.setAltura(scanner.nextDouble());
+        this.clientes.add(cliente);
+        System.out.println("Cliente registrado com sucesso.");
+    }
     static Double calcIMC(Double peso, Double altura){
         Double imc = peso/(altura*altura);
         if(imc<25){
