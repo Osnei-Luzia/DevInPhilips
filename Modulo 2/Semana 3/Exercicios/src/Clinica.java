@@ -32,6 +32,10 @@ public class Clinica {
         cliente.setPeso(cliente.getPeso()-5);
         System.out.println("Peso do cliente reduzido para: "+cliente.peso);
     }
+    public void tratamento(Cliente cliente,double reducao){
+        cliente.setPeso(cliente.getPeso()-reducao);
+        System.out.println("Peso do cliente reduzido para: "+cliente.peso);
+    }
     static Double calcIMC(Double peso, Double altura){
         Double imc = peso/(altura*altura);
         if(imc<25){
