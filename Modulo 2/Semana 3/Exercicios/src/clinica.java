@@ -1,9 +1,13 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class clinica {
     String dono;
     String nome;
     String cnpj;
     String endereco;
     String id;
+    List<Object> clientes = new ArrayList<>();
 
     static Double calcIMC(Double peso, Double altura){
         Double imc = peso/(altura*altura);
