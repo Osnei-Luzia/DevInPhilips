@@ -2,6 +2,7 @@ import Exercicio1.ContaCorrente;
 import Exercicio2.*;
 import Exercicio3.*;
 import Exercicio4.*;
+import Exercicio5.*;
 import java.util.Scanner;
 
 public class Main {
@@ -20,6 +21,9 @@ public class Main {
                 break;
             case 4:
                 exercicioQuatro();
+                break;
+            case 5:
+                exercicioCinco();
                 break;
         }
     }
@@ -61,5 +65,14 @@ public class Main {
     }
     public static void exercicioQuatro(){
         Idade.metodo();
+    }
+    public static void exercicioCinco(){
+        Scanner scanner = new Scanner(System.in);
+        Aluno aluno = new Aluno();
+        System.out.println("Informe o nome do aluno");
+        aluno.setNome(scanner.nextLine());
+        System.out.println("Informe o sobrenome do aluno");
+        aluno.setSobrenome(scanner.nextLine());
+        System.out.println(aluno.registrar());
     }
 }
