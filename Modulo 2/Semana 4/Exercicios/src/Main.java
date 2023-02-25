@@ -1,6 +1,7 @@
 import Exercicio1.ContaCorrente;
 import Exercicio2.*;
 import Exercicio3.*;
+import Exercicio4.*;
 import java.util.Scanner;
 
 public class Main {
@@ -17,8 +18,10 @@ public class Main {
             case 3:
                 exercicioTres();
                 break;
+            case 4:
+                exercicioQuatro();
+                break;
         }
-
     }
     public static void exercicioUm(){
         Scanner scanner = new Scanner(System.in);
@@ -55,5 +58,8 @@ public class Main {
         System.out.println("Informe o valor do imposto");
         produto.setValorImposto(scanner.nextDouble());
         System.out.println(produto.calcularValorComImposto(produto.getValor(),produto.getValorImposto()));
+    }
+    public static void exercicioQuatro(){
+        Idade.metodo();
     }
 }
