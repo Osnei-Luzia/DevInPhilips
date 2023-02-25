@@ -1,5 +1,6 @@
 import Exercicio1.ContaCorrente;
 import Exercicio2.*;
+import Exercicio3.*;
 import java.util.Scanner;
 
 public class Main {
@@ -47,6 +48,12 @@ public class Main {
         System.out.println(gerente.obterCargo());
     }
     public static void exercicioTres(){
-
+        Scanner scanner = new Scanner(System.in);
+        Produto produto = new Produto();
+        System.out.println("Informe o valor do produto");
+        produto.setValor(scanner.nextDouble());
+        System.out.println("Informe o valor do imposto");
+        produto.setValorImposto(scanner.nextDouble());
+        System.out.println(produto.calcularValorComImposto(produto.getValor(),produto.getValorImposto()));
     }
 }
