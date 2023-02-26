@@ -1,8 +1,9 @@
-import Exercicio1.ContaCorrente;
+import Exercicio1.*;
 import Exercicio2.*;
 import Exercicio3.*;
 import Exercicio4.*;
 import Exercicio5.*;
+import Exercicio6.*;
 import java.util.Scanner;
 
 public class Main {
@@ -24,6 +25,9 @@ public class Main {
                 break;
             case 5:
                 exercicioCinco();
+                break;
+            case 6:
+                exercicioSeis();
                 break;
         }
     }
@@ -74,5 +78,19 @@ public class Main {
         System.out.println("Informe o sobrenome do aluno");
         aluno.setSobrenome(scanner.nextLine());
         System.out.println(aluno.registrar());
+    }
+    public static void exercicioSeis() {
+        Scanner scanner = new Scanner(System.in);
+        Teste teste = new Teste();
+        System.out.println("Informe uma frase de até 6 caractéres");
+        try {
+            teste.validar(scanner.nextLine(), 6);
+        }
+        catch(TamanhoInvalidoException erro1){
+            System.out.println("Tamanho inválido");
+        }
+        catch(IllegalArgumentException erro2){
+            System.out.println("Informe valores corretos.");
+        }
     }
 }
