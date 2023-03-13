@@ -1,0 +1,8 @@
+Normalização em Banco de Dados são técnicas que visam minimizar inconsistências e redundâncias dentro de um banco.
+
+Primeira Forma: Eliminar atributos multivalorados e atributos compostos. Criar novas tabelas para representar atributos multivalorados.
+
+Segunda Forma: Eliminar dependência funcional parcial. Fazer com que os atributos não chave dependam totalmente da chave primaria composta.
+Indentificar atributos que dependam parcialmente de uma chave primária composta e criar nvoas tabelas para esses atributos.
+
+Terceira Forma: Eliminar atributos não chaves que dependam de outros atributos não chave. Criar novas tabelas utilizando os atributos provedores como chave primária para os atributos dependentes.
