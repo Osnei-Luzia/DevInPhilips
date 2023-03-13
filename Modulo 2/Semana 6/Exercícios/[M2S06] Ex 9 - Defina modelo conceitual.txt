@@ -1,0 +1,1 @@
+Modelo Conceitual visa capturar as regras de negócio e requisitos de sistema no ponto de vista do negócio, abstraindo o funcionamento do banco.
