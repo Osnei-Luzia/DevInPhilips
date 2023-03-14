@@ -1,0 +1,3 @@
+Banco de dados Relacionais: Bancos modelados a partir de tabelas com atributos relacionadas entre elas. São relacionais: MySQL, PostgreSQL
+
+Banco de dados Não-Relacionais: utilizam diversos modelos de dados, incluindo gráficos, documentos, chave-valor e colunares. São NoSQL: MongoDB, CouchDB
