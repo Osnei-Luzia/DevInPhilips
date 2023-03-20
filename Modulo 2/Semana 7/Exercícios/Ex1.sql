@@ -6,7 +6,7 @@ CREATE TABLE professores(
     telefone Varchar2(13)NOT NULL,
     email Varchar2(50) NOT NULL,
     data_nascimento Date NOT NULL,
-    nascionalidade Varchar(35) NOT NULL,
+    nacionalidade Varchar(35) NOT NULL,
     PRIMARY KEY(id),
     FOREIGN KEY (id_endereco) REFERENCES enderecos(id)
 );
@@ -30,8 +30,8 @@ CREATE TABLE alunos(
     matricula Varchar2(10) NOT NULL,
     email Varchar2(50) NOT NULL,
     data_nascimento Date NOT NULL,
-    nascionalidade Varchar(35) NOT NULL,
-    media_geral Decimal(2,2) NOT NULL,
+    nacionalidade Varchar(35) NOT NULL,
+    media_geral DECIMAL(4,2) NOT NULL,
     PRIMARY KEY(id)
 );
 
