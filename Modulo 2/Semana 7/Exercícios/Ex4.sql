@@ -47,7 +47,7 @@ INSERT INTO cursos(codigo, id_professor, nome, ead, numero_alunos)
 VALUES ('2000036','6','Banco de Dados','1',30);
 
 INSERT INTO cursos(codigo, id_professor, nome, ead, numero_alunos)
-VALUES ('2000040','7','Inglês','1',30);
+VALUES ('2000040','8','Inglês','1',30);
 
 --SELECT * FROM cursos;
 
