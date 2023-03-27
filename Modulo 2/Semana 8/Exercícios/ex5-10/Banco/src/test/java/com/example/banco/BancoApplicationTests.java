@@ -1,10 +1,10 @@
-package br.com.exercicios.projeto;
+package com.example.banco;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ExercicioProjetoApplicationTests {
+class BancoApplicationTests {
 
     @Test
     void contextLoads() {
