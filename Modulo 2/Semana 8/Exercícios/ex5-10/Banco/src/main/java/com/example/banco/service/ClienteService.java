@@ -2,9 +2,9 @@ package com.example.banco.service;
 
 import com.example.banco.model.Cliente;
 import com.example.banco.repository.ClienteRepository;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 
 public class ClienteService {
     ClienteRepository clientes = new ClienteRepository();
@@ -14,7 +14,7 @@ public class ClienteService {
     public Cliente listarClientesById(Integer id){
         return clientes.getClientesById(id);
     }
-    public void salverCliente(Cliente cliente){
+    public void criarCliente(Cliente cliente){
         clientes.setCliente(cliente);
     }
     public void alterarCliente(Integer id, Cliente cliente){
@@ -22,5 +22,6 @@ public class ClienteService {
     }
     public void deletarCliente(Integer id){
         clientes.deletarCliente(id);
+
     }
 }

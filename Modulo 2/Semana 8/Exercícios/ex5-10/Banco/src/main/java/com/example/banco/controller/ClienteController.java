@@ -21,9 +21,9 @@ public class ClienteController {
         return service.listarClientesById(id);
     }
     @PostMapping
-    public void salvarCliente(@RequestBody @Validated Cliente cliente){
+    public void criarCliente(@RequestBody @Validated Cliente cliente){
         System.out.println(cliente.getNome());
-        service.salverCliente(cliente);
+        service.criarCliente(cliente);
     }
     @PutMapping
     public void alterarCliente(@RequestParam Integer id , @RequestBody Cliente cliente){

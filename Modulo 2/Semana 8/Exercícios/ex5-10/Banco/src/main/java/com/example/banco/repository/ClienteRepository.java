@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public class ClienteRepository {
-    List<Cliente> clientes = new ArrayList<>();
+    public static List<Cliente> clientes = new ArrayList<>();
 
     public List<Cliente> getClientes(){
         return this.clientes;
