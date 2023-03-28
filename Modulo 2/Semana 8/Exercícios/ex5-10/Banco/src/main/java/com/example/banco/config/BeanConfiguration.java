@@ -3,7 +3,7 @@ package com.example.banco.config;
 import com.example.banco.repository.ClienteRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
+/*
 @Configuration
 public class BeanConfiguration {
     @Bean("clienteRepositoryInstance")
@@ -11,3 +11,4 @@ public class BeanConfiguration {
         return new ClienteRepository();
     }
 }
+*/

@@ -1,6 +1,5 @@
 package com.example.banco.controller;
 
-import com.example.banco.model.Cliente;
 import com.example.banco.model.Conta;
 import com.example.banco.service.ContaService;
 import org.springframework.web.bind.annotation.*;

@@ -1,7 +1,6 @@
 package com.example.banco.controller;
 
 import com.example.banco.model.Cliente;
-import com.example.banco.repository.ClienteRepository;
 import com.example.banco.service.ClienteService;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +21,6 @@ public class ClienteController {
     }
     @PostMapping
     public void criarCliente(@RequestBody @Validated Cliente cliente){
-        System.out.println(cliente.getNome());
         service.criarCliente(cliente);
     }
     @PutMapping
