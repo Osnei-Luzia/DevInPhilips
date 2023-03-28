@@ -49,6 +49,23 @@ public class ContaService {
         }
     }
 
+    public void transferencia(Integer id1, Integer id2) {
+        int i = 0;
+        int conta1 = -1, conta2 = -1;
+        for (Conta conta : listaContas.getContas()) {
+            if (id1 == conta.getId()) {
+                conta1 = i;
+            }
+            if (id2 == conta.getId()) {
+                conta2 = i;
+            }
+            i++;
+        }
+        if (conta1 != -1 && conta2 != -1) {
+            contas.transferencia(conta1,conta2);
+        }
+    }
+
     public void deletarConta(Integer id) {
         int i = 0;
         for (Conta conta : listaContas.getContas()) {

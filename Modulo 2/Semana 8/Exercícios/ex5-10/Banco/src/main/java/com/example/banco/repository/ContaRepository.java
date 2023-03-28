@@ -23,6 +23,10 @@ public class ContaRepository {
     public void alterarConta(Integer id, Conta conta){
         this.contas.set(id,conta);
     }
+    public void transferencia(Integer id1,Integer id2){
+        this.contas.get(id1).setValor(this.contas.get(id1).getValor() + contas.get(id2).getValor());
+        this.contas.get(id2).setValor(0);
+    }
     public void deletarConta(Integer id){
         this.contas.remove(this.contas.get(id));
     }
