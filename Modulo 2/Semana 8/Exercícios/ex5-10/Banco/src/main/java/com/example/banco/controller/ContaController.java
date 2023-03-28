@@ -2,6 +2,7 @@ package com.example.banco.controller;
 
 import com.example.banco.model.Conta;
 import com.example.banco.service.ContaService;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class ContaController {
     }
 
     @PostMapping
-    public void criarConta(@RequestBody Conta conta){
+    public void criarConta(@RequestBody @Validated Conta conta){
         service.criarConta(conta);
     }
     @PutMapping

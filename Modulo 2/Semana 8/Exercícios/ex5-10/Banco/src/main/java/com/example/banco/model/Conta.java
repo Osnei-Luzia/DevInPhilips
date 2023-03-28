@@ -1,16 +1,28 @@
 package com.example.banco.model;
 
+import jakarta.validation.constraints.PositiveOrZero;
+
+
 public class Conta {
     Integer id;
     Integer clienteId;
+    @PositiveOrZero
     Integer valor;
 
     public Integer getClienteId() {
         return clienteId;
     }
 
+    public void setClienteId(Integer clienteId) {
+        this.clienteId = clienteId;
+    }
+
     public Integer getValor() {
         return valor;
+    }
+
+    public void setValor(Integer valor) {
+        this.valor = valor;
     }
 
     public Integer getId() {

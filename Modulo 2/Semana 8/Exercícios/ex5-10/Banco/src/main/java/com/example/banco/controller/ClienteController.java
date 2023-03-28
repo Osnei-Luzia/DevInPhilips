@@ -24,7 +24,7 @@ public class ClienteController {
         service.criarCliente(cliente);
     }
     @PutMapping
-    public void alterarCliente(@RequestParam Integer id , @RequestBody Cliente cliente){
+    public void alterarCliente(@RequestParam Integer id , @RequestBody @Validated Cliente cliente){
         service.alterarCliente(id,cliente);
     }
     @DeleteMapping("/{id}")

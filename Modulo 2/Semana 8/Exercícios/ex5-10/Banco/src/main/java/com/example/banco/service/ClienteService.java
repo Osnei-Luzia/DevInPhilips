@@ -26,7 +26,7 @@ public class ClienteService {
         int i = 0;
         for (Cliente cliente : listaClientes.getClientes()) {
             if (id == cliente.getId()) {
-                clienteNovo.setId(i);
+                clienteNovo.setId(cliente.getId());
                 clientes.alterarCliente(i, clienteNovo);
                 break;
             }

@@ -21,6 +21,7 @@ public class ContaService {
     public Conta listarContasById(Integer id) {
         return contas.getContasById(id);
     }
+
     public void criarConta(Conta conta) {
         for (Cliente cliente : listaClientes.getClientes()) {
             if (conta.getClienteId() == cliente.getId()) {
@@ -30,17 +31,24 @@ public class ContaService {
             }
         }//throw error
     }
+
     public void alterarConta(Integer id, Conta contaNova) {
         int i = 0;
-        for(Conta conta : listaContas.getContas()){
-            if(id == conta.getId()){
-                contaNova.setId(i);
-                contas.alterarConta(i,contaNova);
+        for (Conta conta : listaContas.getContas()) {
+            if (id == conta.getId()) {
+                contaNova.setId(conta.getId());
+                contaNova.setClienteId(conta.getClienteId());
+                contaNova.setValor(contaNova.getValor() + conta.getValor());
+                //transformar em bean
+                if (contaNova.getValor() >= 0) {
+                    contas.alterarConta(i, contaNova);
+                }//throw erro valor menor que zero
                 break;
             }
             i++;
         }
     }
+
     public void deletarConta(Integer id) {
         int i = 0;
         for (Conta conta : listaContas.getContas()) {
