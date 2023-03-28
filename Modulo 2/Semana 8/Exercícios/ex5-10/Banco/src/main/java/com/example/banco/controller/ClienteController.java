@@ -28,7 +28,7 @@ public class ClienteController {
         service.alterarCliente(id,cliente);
     }
     @DeleteMapping("/{id}")
-    public void alterarCliente(@PathVariable Integer id){
+    public void deletarCliente(@PathVariable Integer id){
         service.deletarCliente(id);
     }
 }

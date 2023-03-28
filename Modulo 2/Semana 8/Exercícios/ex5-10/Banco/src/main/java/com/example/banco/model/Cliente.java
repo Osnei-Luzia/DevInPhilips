@@ -1,9 +1,13 @@
 package com.example.banco.model;
 
+import jakarta.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.br.CPF;
+
+import javax.validation.constraints.NotNull;
 
 public class Cliente {
     Integer id;
+    @NotNull @NotBlank
     String nome;
 
     @CPF

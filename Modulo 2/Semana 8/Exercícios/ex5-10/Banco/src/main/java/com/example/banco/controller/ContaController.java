@@ -32,9 +32,8 @@ public class ContaController {
     public void Transferencia(@RequestParam Integer idConta1, @RequestParam Integer idConta2){
         service.transferencia(idConta1,idConta2);
     }
-    @DeleteMapping
-    public void deletarConta(Integer id){
+    @DeleteMapping("/{id}")
+    public void deletarConta(@PathVariable Integer id){
         service.deletarConta(id);
     }
-
 }

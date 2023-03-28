@@ -9,13 +9,13 @@ import java.util.List;
 @Repository
 public class ClienteRepository {
     private static List<Cliente> clientes = new ArrayList<>();
-    public static ClienteRepository listaClientes;
+    private static ClienteRepository listaClientes;
 
     public List<Cliente> getClientes(){
         return this.clientes;
     }
     public Cliente getClientesById(Integer id){
-         return clientes.stream().filter(c -> c.getId() == id).findFirst().orElse(null);
+         return clientes.stream().filter(c -> c.getId() == id).findFirst().orElseThrow(() -> new RuntimeException("Id inexistente."));
     }
     public void setCliente(Cliente cliente){
         this.clientes.add(cliente);

@@ -10,12 +10,12 @@ import java.util.List;
 public class ContaRepository {
     private static List<Conta> contas = new ArrayList<>();
 
-    public static ContaRepository listaContas;
+    private static ContaRepository listaContas;
     public List<Conta>getContas(){
         return this.contas;
     }
     public Conta getContasById(Integer id){
-        return contas.stream().filter(c -> c.getId() == id).findFirst().orElse(null);
+        return contas.stream().filter(c -> c.getId() == id).findFirst().orElseThrow(() -> new RuntimeException("Id inexistente."));
     }
     public void criarConta(Conta conta){
         this.contas.add(conta);
