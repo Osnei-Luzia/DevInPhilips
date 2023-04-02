@@ -1,0 +1,3 @@
+JDBC - Biblioteca para acesso a base de dados diretamente pelo java, usando SQL nativo.
+Hibernate - Framework para simplificar a conexão com o banco, implementa Object Relational Mapping. Fazendo a ponte entre tabelas de banco relacional com as classes e atributos de poo.
+JPA - Especificações de padronização para implementação de ORM em projetos.
