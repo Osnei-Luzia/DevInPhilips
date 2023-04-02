@@ -1,0 +1,1 @@
+Data Transfer Object - Objeto de transferência de dados, padrão de desenvolvimento para transfêrencia de dados entre a aplicação e o banco.
