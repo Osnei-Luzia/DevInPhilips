@@ -4,6 +4,8 @@ import com.exercicios.mercado.models.Produto;
 import com.exercicios.mercado.repositories.ProdutoRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProdutoService {
     private final ProdutoRepository repository;
@@ -13,10 +15,10 @@ public class ProdutoService {
     public void salvarProduto(Produto produto){
         repository.save(produto);
     }
-    public void buscarProdutos(){
-        repository.findAll();
+    public List<Produto> buscarProdutos(){
+        return (List<Produto>) repository.findAll();
     }
-    public void buscarProdutoById(Integer id){
-        repository.findById(id);
+    public void excluirProdutoById(int id){
+        repository.deleteById(id);
     }
 }
