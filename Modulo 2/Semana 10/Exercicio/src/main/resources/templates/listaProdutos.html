@@ -5,8 +5,7 @@
     <title>Lista de Produtos</title>
 </head>
 <body>
-    <div th:each="produtos: ${produto}">
-        teste
+    <div th:each="produto: ${produtos}">
         <h1 th:text="${produto.nome}"></h1>
         <p th:text="${produto.descricao}"></p>
         <h2 th:text="${produto.valor}"></h2>
