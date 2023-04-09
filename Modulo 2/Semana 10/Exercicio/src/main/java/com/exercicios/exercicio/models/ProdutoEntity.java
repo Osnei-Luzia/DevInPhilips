@@ -12,7 +12,7 @@ public class ProdutoEntity {
     @Column
     private String descricao;
     @Column
-    private double valor;
+    private Double valor;
 
     public Integer getId() {
         return id;
@@ -38,16 +38,21 @@ public class ProdutoEntity {
         this.descricao = descricao;
     }
 
-    public double getValor() {
+    public Double getValor() {
         return valor;
     }
 
-    public void setValor(double valor) {
+    public void setValor(Double valor) {
         this.valor = valor;
     }
     public ProdutoEntity() {}
 
-    public ProdutoEntity(Integer id, String nome, String descricao, double valor) {
+    public ProdutoEntity(String nome, String descricao, Double valor) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.valor = valor;
+    }
+    public ProdutoEntity(Integer id, String nome, String descricao, Double valor) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
