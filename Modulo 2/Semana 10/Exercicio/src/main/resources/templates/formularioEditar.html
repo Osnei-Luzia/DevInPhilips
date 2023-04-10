@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário</title>
+</head>
+<body>
+<h1>Editar Produto</h1>
+<form action="#" th:action="@{/produto/editar}" th:object="${produtoDto}" method="post">
+  <label for="idEditar">ID:</label>
+  <input type="text" th:field="*{id}" id="idEditar" placeholder="Id">
+  <label for="nome">Nome:</label>
+  <input type="text" th:field="*{nome}" id="nome" placeholder="Nome">
+  <label for="descricao">Descrição:</label>
+  <input type="text" th:field="*{descricao}" id="descricao" placeholder="Descrição do produto">
+  <label for="valor">Valor:</label>
+  <input type="text" th:field="*{valor}" id="valor" placeholder="10.00">
+  <input type="submit" value="Editar Produto">
+</form>
+<h1>Deletar Produto</h1>
+<form action="#" th:action="@{/produto/deletar}" th:object="${produtoDto}" method="post">
+  <label for="idDeletar">ID:</label>
+  <input type="text" th:field="*{id}" id="idDeletar" placeholder="Id">
+  <input type="submit" value="Deletar Produto">
+</form>
+</body>
+</html>

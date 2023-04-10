@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 public class ProdutoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column
     private String nome;
     @Column
@@ -14,11 +14,11 @@ public class ProdutoEntity {
     @Column
     private Double valor;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -52,7 +52,7 @@ public class ProdutoEntity {
         this.descricao = descricao;
         this.valor = valor;
     }
-    public ProdutoEntity(Integer id, String nome, String descricao, Double valor) {
+    public ProdutoEntity(Long id, String nome, String descricao, Double valor) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;

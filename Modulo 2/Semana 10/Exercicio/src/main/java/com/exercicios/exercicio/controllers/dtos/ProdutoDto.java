@@ -2,6 +2,7 @@ package com.exercicios.exercicio.controllers.dtos;
 
 public class ProdutoDto {
 
+    private Long id;
     private String nome;
     private String descricao;
     private Double valor;
@@ -13,6 +14,14 @@ public class ProdutoDto {
                 ", descricao='" + descricao + '\'' +
                 ", valor=" + valor +
                 '}';
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {

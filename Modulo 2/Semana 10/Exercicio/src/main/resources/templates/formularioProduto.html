@@ -5,6 +5,7 @@
     <title>Formulário</title>
 </head>
 <body>
+<h1>Novo Produto</h1>
 <form action="#" th:action="@{/produto/criarNovo}" th:object="${produtoDto}" method="post">
     <label for="nome">Nome:</label>
     <input type="text" th:field="*{nome}" id="nome" placeholder="Nome">

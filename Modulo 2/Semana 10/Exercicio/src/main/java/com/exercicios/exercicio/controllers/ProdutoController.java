@@ -46,5 +46,18 @@ public class ProdutoController {
         return "listaProdutos";
     }
 
-
+    @GetMapping("/editar")
+    public String novaEdicao(ProdutoDto produtoDto, Model model){
+        return "formularioEditar";
+    }
+    @PostMapping("/editar")
+    public String editarProduto(@Validated ProdutoDto novoProduto, Model model){
+        produtoServices.editarProduto(novoProduto);
+        return "redirect:/produto/listarTodos";
+    }
+    @PostMapping("/deletar")
+    public String deletarProduto(ProdutoDto novoProduto, Model model){
+        produtoServices.deletarProduto(novoProduto);
+        return "redirect:/produto/listarTodos";
+    }
 }
