@@ -5,8 +5,18 @@
     <title>Produto</title>
 </head>
 <body>
-    <h1 th:text="${produto.nome}"></h1>
-    <p th:text="${produto.descricao}"></p>
-    <h2 th:text="${produto.valor}"></h2>
+    <form th:action="@{/produto/criarNovo}" method="get">
+        <input type="submit" value="Novo Produto"/>
+    </form>
+    <form th:action="@{/produto/listarTodos}" method="get">
+        <input type="submit" value="Listar Produtos"/>
+    </form>
+    <form th:action="@{/produto/editar}" method="get">
+        <input type="submit" value="Editar Produto"/>
+    </form>
+
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sair"/>
+    </form>
 </body>
 </html>
