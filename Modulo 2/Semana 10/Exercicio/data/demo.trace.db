@@ -1,0 +1,6 @@
+2023-04-10 11:12:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found; SQL statement:
+insert into users (username, password, enabled) values (?,?,?) [42102-214]
+2023-04-10 11:13:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found; SQL statement:
+insert into users (username, password, enabled) values (?,?,?) [42102-214]
