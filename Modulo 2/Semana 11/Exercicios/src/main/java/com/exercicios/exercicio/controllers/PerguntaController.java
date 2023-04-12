@@ -3,10 +3,7 @@ package com.exercicios.exercicio.controllers;
 import com.exercicios.exercicio.controllers.dtos.PerguntaDto;
 
 import com.exercicios.exercicio.services.PerguntaService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,5 +23,10 @@ public class PerguntaController {
     @GetMapping("/{id}")
     public PerguntaDto listarPerguntasById(@PathVariable Long id){
         return service.buscarPerguntasById(id);
+    }
+
+    @GetMapping("/porQuiz")
+    public PerguntaDto listarPerguntasByQuiz(@RequestParam Long idQuiz){
+        return service.buscarPerguntasByQuiz(idQuiz);
     }
 }

@@ -1,7 +1,9 @@
 package com.exercicios.exercicio.services;
 
+import com.exercicios.exercicio.controllers.dtos.PerguntaDto;
 import com.exercicios.exercicio.controllers.dtos.QuizDto;
 import com.exercicios.exercicio.controllers.dtos.RespostaDto;
+import com.exercicios.exercicio.models.PerguntaEntity;
 import com.exercicios.exercicio.models.RespostaEntity;
 import com.exercicios.exercicio.repositories.RespostaRepository;
 import org.springframework.stereotype.Service;
@@ -28,6 +30,13 @@ public class RespostaService {
 
         respostaDto.setTexto(respostaEntity.getTexto());
 
+        return respostaDto;
+    }
+    public RespostaDto buscarRespostasByPerguntas(Long idPergunta){
+        RespostaDto respostaDto = new RespostaDto();
+        RespostaEntity respostaEntity = repository.findByPergunta_id(idPergunta);
+        //tratar Else null
+        respostaDto.setTexto(respostaEntity.getTexto());
         return respostaDto;
     }
 }

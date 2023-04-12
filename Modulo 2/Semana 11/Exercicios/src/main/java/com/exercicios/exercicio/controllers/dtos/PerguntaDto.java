@@ -3,7 +3,6 @@ package com.exercicios.exercicio.controllers.dtos;
 public class PerguntaDto {
     private String titulo;
     private String texto;
-
     public PerguntaDto() {
 
     }

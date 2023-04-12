@@ -1,12 +1,10 @@
 package com.exercicios.exercicio.controllers;
 
+import com.exercicios.exercicio.controllers.dtos.PerguntaDto;
 import com.exercicios.exercicio.controllers.dtos.RespostaDto;
 import com.exercicios.exercicio.models.RespostaEntity;
 import com.exercicios.exercicio.services.RespostaService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,5 +24,10 @@ public class RespostaController {
     @GetMapping("/{id}")
     public RespostaDto listarRespostaById(@PathVariable Long id){
         return service.buscarRepostasById(id);
+    }
+
+    @GetMapping("/porPergunta")
+    public RespostaDto listarPerguntasByQuiz(@RequestParam Long idPergunta){
+        return service.buscarRespostasByPerguntas(idPergunta);
     }
 }

@@ -29,6 +29,17 @@ public class PerguntaService {
         perguntaDto.setTitulo(perguntaEntity.getTexto());
         perguntaDto.setTexto(perguntaEntity.getTexto());
 
+        return null;//perguntaDto;
+    }
+
+    public PerguntaDto buscarPerguntasByQuiz(Long idQuiz){
+        PerguntaDto perguntaDto = new PerguntaDto();
+        PerguntaEntity perguntaEntity = repository.findById_quiz(idQuiz);
+        //tratar Else null
+        perguntaDto.setTitulo(perguntaEntity.getTexto());
+        perguntaDto.setTexto(perguntaEntity.getTexto());
+
         return perguntaDto;
     }
+
 }
