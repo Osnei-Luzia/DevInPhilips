@@ -35,4 +35,9 @@ public class QuizController {
     public void alterarQuiz(@RequestBody QuizAlteracaoRequest quizRequest){
         service.alterarQuiz(quizRequest);
     }
+
+    @DeleteMapping
+    public void deletarQuiz(@RequestParam Long id){
+        service.deletarQuiz(id);
+    }
 }

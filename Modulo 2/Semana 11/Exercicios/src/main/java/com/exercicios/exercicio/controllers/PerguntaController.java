@@ -40,4 +40,8 @@ public class PerguntaController {
     public void alterarPergunta(@RequestBody PerguntaAlteracaoRequest perguntaRequest){
         service.alterarPergunta(perguntaRequest);
     }
+    @DeleteMapping
+    public void deletarPergunta(@RequestParam Long id){
+        service.deletarPergunta(id);
+    }
 }

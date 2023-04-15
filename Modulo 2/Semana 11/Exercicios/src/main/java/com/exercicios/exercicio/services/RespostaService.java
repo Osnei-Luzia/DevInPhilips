@@ -57,4 +57,13 @@ public class RespostaService {
             System.out.println("Resposta não encontrada");
         }
     }
+
+    public void deletarResposta(Long id) {
+        RespostaEntity respostaEntity = repository.findById(id).orElse(null);
+        if (!Objects.isNull(respostaEntity)) {
+            repository.delete(respostaEntity);
+        } else {
+            System.out.println("Resposta não encontrada");
+        }
+    }
 }

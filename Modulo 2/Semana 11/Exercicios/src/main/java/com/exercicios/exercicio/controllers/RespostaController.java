@@ -40,4 +40,9 @@ public class RespostaController {
     public void alterarResposta(@RequestBody RespostaAlteracaoRequest respostaRequest){
         service.alterarResposta(respostaRequest);
     }
+
+    @DeleteMapping
+    public void deletarResposta(@RequestParam Long id){
+        service.deletarResposta(id);
+    }
 }

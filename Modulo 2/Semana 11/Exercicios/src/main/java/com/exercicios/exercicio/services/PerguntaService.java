@@ -58,4 +58,15 @@ public class PerguntaService {
             System.out.println("Pergunta não encontrada");
         }
     }
+
+    public void deletarPergunta(Long id){
+        PerguntaEntity perguntaEntity = repository.findById(id).orElse(null);
+        if(!Objects.isNull(perguntaEntity)){
+            //fazer deleção de chaves estrangeiras
+
+            repository.delete(perguntaEntity);
+        }else{
+            System.out.println("Pergunta não encontrada");
+        }
+    }
 }
