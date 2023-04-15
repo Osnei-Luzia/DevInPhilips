@@ -58,7 +58,7 @@ public class QuizService {
         QuizEntity quizEntity = repository.findById(id).orElse(null);
         if (!Objects.isNull(quizEntity)) {
             //fazer deleção de chaves estrangeiras
-            
+
             repository.delete(quizEntity);
         } else {
             System.out.println("Quiz não encontrado");

@@ -6,6 +6,9 @@ import com.exercicios.exercicio.controllers.dtos.PerguntaResponse;
 import com.exercicios.exercicio.mappers.PerguntaMapper;
 import com.exercicios.exercicio.models.PerguntaEntity;
 import com.exercicios.exercicio.repositories.PerguntaRepository;
+import jakarta.persistence.EntityNotFoundException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,18 +26,12 @@ public class PerguntaService {
         this.mapper = mapper;
     }
 
-    public List<PerguntaResponse> buscarPerguntas() {
-        return repository.findAll().stream().map(
-                        perguntaEntity -> new PerguntaResponse(perguntaEntity.getTitulo(), perguntaEntity.getTexto()))
-                .collect(Collectors.toList());
+    public Page<PerguntaResponse> buscarPerguntas(Pageable paginacao) {
+        return mapper.map(repository.findAll(paginacao));
     }
 
     public PerguntaResponse buscarPerguntasById(Long id) {
-        PerguntaEntity perguntaEntity = repository.findById(id).orElse(null);
-        //tratar Else null
-
-        PerguntaResponse perguntaResponse = mapper.map(perguntaEntity);
-        return perguntaResponse;
+        return mapper.map(repository.findById(id).orElseThrow(EntityNotFoundException::new));
     }
 
     public List<PerguntaResponse> buscarPerguntasByQuiz(Long idQuiz) {

@@ -5,8 +5,12 @@ import com.exercicios.exercicio.controllers.dtos.PerguntaRequest;
 import com.exercicios.exercicio.controllers.dtos.PerguntaResponse;
 
 import com.exercicios.exercicio.services.PerguntaService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -19,8 +23,8 @@ public class PerguntaController {
     }
 
     @GetMapping
-    public List<PerguntaResponse> listarPerguntas(){
-        return service.buscarPerguntas();
+    public ResponseEntity<Page<PerguntaResponse>> listarPerguntas(Pageable paginacao){
+        return ResponseEntity.ok(service.buscarPerguntas(paginacao));
     }
     @GetMapping("/{id}")
     public PerguntaResponse listarPerguntasById(@PathVariable Long id){
@@ -32,8 +36,10 @@ public class PerguntaController {
         return service.buscarPerguntasByQuiz(idQuiz);
     }
     @PostMapping("/adicionar")
-    public void criarPergunta(@RequestBody PerguntaRequest perguntaRequest){
+    public ResponseEntity<Void> criarPergunta(@RequestBody PerguntaRequest perguntaRequest){
         service.salvarPergunta(perguntaRequest);
+        return ResponseEntity.badRequest().build();
+                //created(URI.create("localhost:8080/perguntas")).build()
     }
 
     @PutMapping("/alterar")
@@ -41,7 +47,8 @@ public class PerguntaController {
         service.alterarPergunta(perguntaRequest);
     }
     @DeleteMapping
-    public void deletarPergunta(@RequestParam Long id){
+    public ResponseEntity<Void> deletarPergunta(@RequestParam Long id){
         service.deletarPergunta(id);
+        return ResponseEntity.noContent().build();
     }
 }
