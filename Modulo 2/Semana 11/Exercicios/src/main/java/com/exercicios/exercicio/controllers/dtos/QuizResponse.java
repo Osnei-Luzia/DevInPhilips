@@ -1,12 +1,12 @@
 package com.exercicios.exercicio.controllers.dtos;
 
-public class QuizDto {
+public class QuizResponse {
     private String nome;
     private String descricao;
 
-    public QuizDto() {
+    public QuizResponse() {
     }
-    public QuizDto(String nome, String descricao) {
+    public QuizResponse(String nome, String descricao) {
         this.nome = nome;
         this.descricao = descricao;
     }

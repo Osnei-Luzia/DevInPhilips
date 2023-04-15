@@ -1,14 +1,18 @@
 package com.exercicios.exercicio.controllers.dtos;
 
-public class PerguntaDto {
+import com.exercicios.exercicio.models.QuizEntity;
+
+public class PerguntaRequest {
     private String titulo;
     private String texto;
-    public PerguntaDto() {
+    private QuizEntity id_quiz;
 
+    public PerguntaRequest() {
     }
-    public PerguntaDto(String titulo, String texto) {
+    public PerguntaRequest(String titulo, String texto, QuizEntity id_quiz) {
         this.titulo = titulo;
         this.texto = texto;
+        this.id_quiz = id_quiz;
     }
 
     public String getTitulo() {
@@ -25,5 +29,13 @@ public class PerguntaDto {
 
     public void setTexto(String texto) {
         this.texto = texto;
+    }
+
+    public QuizEntity getId_quiz() {
+        return id_quiz;
+    }
+
+    public void setId_quiz(QuizEntity id_quiz) {
+        this.id_quiz = id_quiz;
     }
 }

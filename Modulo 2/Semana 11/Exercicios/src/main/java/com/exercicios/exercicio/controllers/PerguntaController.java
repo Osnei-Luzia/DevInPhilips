@@ -1,6 +1,7 @@
 package com.exercicios.exercicio.controllers;
 
-import com.exercicios.exercicio.controllers.dtos.PerguntaDto;
+import com.exercicios.exercicio.controllers.dtos.PerguntaRequest;
+import com.exercicios.exercicio.controllers.dtos.PerguntaResponse;
 
 import com.exercicios.exercicio.services.PerguntaService;
 import org.springframework.web.bind.annotation.*;
@@ -17,16 +18,20 @@ public class PerguntaController {
     }
 
     @GetMapping
-    public List<PerguntaDto> listarPerguntas(){
+    public List<PerguntaResponse> listarPerguntas(){
         return service.buscarPerguntas();
     }
     @GetMapping("/{id}")
-    public PerguntaDto listarPerguntasById(@PathVariable Long id){
+    public PerguntaResponse listarPerguntasById(@PathVariable Long id){
         return service.buscarPerguntasById(id);
     }
 
     @GetMapping("/porQuiz")
-    public PerguntaDto listarPerguntasByQuiz(@RequestParam Long idQuiz){
+    public List<PerguntaResponse> listarPerguntasByQuiz(@RequestParam Long idQuiz){
         return service.buscarPerguntasByQuiz(idQuiz);
+    }
+    @PostMapping("/adicionar")
+    public void criarPergunta(@RequestBody PerguntaRequest perguntaRequest){
+        service.salvarPergunta(perguntaRequest);
     }
 }

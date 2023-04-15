@@ -1,12 +1,12 @@
 package com.exercicios.exercicio.controllers.dtos;
 
-public class RespostaDto {
+public class RespostaResponse {
     private String texto;
 
-    public RespostaDto() {
-    }
+    public RespostaResponse() {
 
-    public RespostaDto(String texto) {
+    }
+    public RespostaResponse(String texto) {
         this.texto = texto;
     }
 

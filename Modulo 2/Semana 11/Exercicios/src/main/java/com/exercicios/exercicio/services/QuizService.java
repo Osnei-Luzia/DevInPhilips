@@ -1,8 +1,8 @@
 package com.exercicios.exercicio.services;
 
-import com.exercicios.exercicio.controllers.dtos.PerguntaDto;
-import com.exercicios.exercicio.controllers.dtos.QuizDto;
-import com.exercicios.exercicio.models.PerguntaEntity;
+import com.exercicios.exercicio.controllers.dtos.QuizRequest;
+import com.exercicios.exercicio.controllers.dtos.QuizResponse;
+import com.exercicios.exercicio.mappers.QuizMapper;
 import com.exercicios.exercicio.models.QuizEntity;
 import com.exercicios.exercicio.repositories.QuizRepository;
 import org.springframework.stereotype.Service;
@@ -13,22 +13,30 @@ import java.util.stream.Collectors;
 @Service
 public class QuizService {
     private final QuizRepository repository;
-    public QuizService(QuizRepository quizRepository){
+    private final QuizMapper mapper;
+
+    public QuizService(QuizRepository quizRepository, QuizMapper mapper){
         this.repository = quizRepository;
+        this.mapper = mapper;
     }
 
-    public List<QuizDto> buscarQuiz(){
+    public List<QuizResponse> buscarQuiz(){
         return repository.findAll().stream().map(
-                        quizEntity -> new QuizDto(quizEntity.getNome(), quizEntity.getDescricao()))
+                        quizEntity -> new QuizResponse(quizEntity.getNome(), quizEntity.getDescricao()))
                 .collect(Collectors.toList());
     }
-    public QuizDto buscarQuizById(Long id){
-        QuizDto quizDto = new QuizDto();
+    public QuizResponse buscarQuizById(Long id){
+        QuizResponse quizResponse = new QuizResponse();
         QuizEntity quizEntity = repository.findById(id).orElse(null);
         //tratar Else null
-        quizDto.setNome(quizEntity.getNome());
-        quizDto.setDescricao(quizEntity.getDescricao());
+        quizResponse.setNome(quizEntity.getNome());
+        quizResponse.setDescricao(quizEntity.getDescricao());
 
-        return quizDto;
+        return quizResponse;
+    }
+
+    public void salvarQuiz(QuizRequest quizRequest){
+        QuizEntity quizEntity = mapper.map(quizRequest);
+        repository.save(quizEntity);
     }
 }

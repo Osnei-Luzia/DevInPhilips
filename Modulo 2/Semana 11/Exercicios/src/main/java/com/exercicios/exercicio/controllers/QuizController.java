@@ -1,11 +1,9 @@
 package com.exercicios.exercicio.controllers;
 
-import com.exercicios.exercicio.controllers.dtos.QuizDto;
+import com.exercicios.exercicio.controllers.dtos.QuizRequest;
+import com.exercicios.exercicio.controllers.dtos.QuizResponse;
 import com.exercicios.exercicio.services.QuizService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,12 +16,17 @@ public class QuizController {
         this.service = quizService;
     }
     @GetMapping
-    public List<QuizDto> listarQuiz(){
+    public List<QuizResponse> listarQuiz(){
         return service.buscarQuiz();
     }
 
     @GetMapping("/{id}")
-    public QuizDto listarQuiz(@PathVariable Long id){
+    public QuizResponse listarQuiz(@PathVariable Long id){
         return service.buscarQuizById(id);
+    }
+
+    @PostMapping("/adicionar")
+    public void criarQuiz(@RequestBody QuizRequest quizRequest){
+        service.salvarQuiz(quizRequest);
     }
 }

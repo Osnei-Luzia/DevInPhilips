@@ -6,19 +6,20 @@ import jakarta.persistence.*;
 @Table(name="respostas")
 public class RespostaEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String texto;
     @OneToOne
-    private PerguntaEntity pergunta_id;
+    private PerguntaEntity id_pergunta;
 
     public RespostaEntity() {
 
     }
 
-    public RespostaEntity(Long id, String texto, PerguntaEntity pergunta_id) {
+    public RespostaEntity(Long id, String texto, PerguntaEntity id_pergunta) {
         this.id = id;
         this.texto = texto;
-        this.pergunta_id = pergunta_id;
+        this.id_pergunta = id_pergunta;
     }
 
     public Long getId() {
@@ -37,11 +38,11 @@ public class RespostaEntity {
         this.texto = texto;
     }
 
-    public PerguntaEntity getPergunta_id() {
-        return pergunta_id;
+    public PerguntaEntity getId_pergunta() {
+        return id_pergunta;
     }
 
-    public void setPergunta_id(PerguntaEntity pergunta_id) {
-        this.pergunta_id = pergunta_id;
+    public void setId_pergunta(PerguntaEntity id_pergunta) {
+        this.id_pergunta = id_pergunta;
     }
 }
