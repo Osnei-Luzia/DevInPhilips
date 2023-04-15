@@ -1,13 +1,17 @@
 package com.exercicios.exercicio.services;
 
+import com.exercicios.exercicio.controllers.dtos.QuizAlteracaoRequest;
+import com.exercicios.exercicio.controllers.dtos.RespostaAlteracaoRequest;
 import com.exercicios.exercicio.controllers.dtos.RespostaRequest;
 import com.exercicios.exercicio.controllers.dtos.RespostaResponse;
 import com.exercicios.exercicio.mappers.RespostaMapper;
+import com.exercicios.exercicio.models.QuizEntity;
 import com.exercicios.exercicio.models.RespostaEntity;
 import com.exercicios.exercicio.repositories.RespostaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
@@ -42,5 +46,15 @@ public class RespostaService {
         RespostaEntity respostaEntity = mapper.map(respostaRequest);
 
         repository.save(respostaEntity);
+    }
+
+    public void alterarResposta(RespostaAlteracaoRequest respostaRequest) {
+        RespostaEntity respostaEntity = repository.findById(respostaRequest.getId()).orElse(null);
+        if (!Objects.isNull(respostaEntity)) {
+            respostaEntity = mapper.map(respostaRequest);
+            repository.save(respostaEntity);
+        } else {
+            System.out.println("Resposta não encontrada");
+        }
     }
 }

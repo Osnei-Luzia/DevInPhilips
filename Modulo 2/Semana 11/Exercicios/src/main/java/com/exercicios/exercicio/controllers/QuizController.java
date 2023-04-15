@@ -1,5 +1,6 @@
 package com.exercicios.exercicio.controllers;
 
+import com.exercicios.exercicio.controllers.dtos.QuizAlteracaoRequest;
 import com.exercicios.exercicio.controllers.dtos.QuizRequest;
 import com.exercicios.exercicio.controllers.dtos.QuizResponse;
 import com.exercicios.exercicio.services.QuizService;
@@ -28,5 +29,10 @@ public class QuizController {
     @PostMapping("/adicionar")
     public void criarQuiz(@RequestBody QuizRequest quizRequest){
         service.salvarQuiz(quizRequest);
+    }
+
+    @PutMapping("/alterar")
+    public void alterarQuiz(@RequestBody QuizAlteracaoRequest quizRequest){
+        service.alterarQuiz(quizRequest);
     }
 }

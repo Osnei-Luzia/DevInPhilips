@@ -1,5 +1,6 @@
 package com.exercicios.exercicio.controllers;
 
+import com.exercicios.exercicio.controllers.dtos.PerguntaAlteracaoRequest;
 import com.exercicios.exercicio.controllers.dtos.PerguntaRequest;
 import com.exercicios.exercicio.controllers.dtos.PerguntaResponse;
 
@@ -33,5 +34,10 @@ public class PerguntaController {
     @PostMapping("/adicionar")
     public void criarPergunta(@RequestBody PerguntaRequest perguntaRequest){
         service.salvarPergunta(perguntaRequest);
+    }
+
+    @PutMapping("/alterar")
+    public void alterarPergunta(@RequestBody PerguntaAlteracaoRequest perguntaRequest){
+        service.alterarPergunta(perguntaRequest);
     }
 }

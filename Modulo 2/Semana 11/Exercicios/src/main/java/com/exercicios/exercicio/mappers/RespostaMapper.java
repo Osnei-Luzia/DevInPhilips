@@ -1,5 +1,6 @@
 package com.exercicios.exercicio.mappers;
 
+import com.exercicios.exercicio.controllers.dtos.RespostaAlteracaoRequest;
 import com.exercicios.exercicio.controllers.dtos.RespostaRequest;
 import com.exercicios.exercicio.controllers.dtos.RespostaResponse;
 import com.exercicios.exercicio.models.RespostaEntity;
@@ -10,4 +11,6 @@ import org.mapstruct.ReportingPolicy;
 public interface RespostaMapper {
     RespostaEntity map (RespostaRequest source);
     RespostaResponse map (RespostaEntity source);
+
+    RespostaEntity map (RespostaAlteracaoRequest source);
 }

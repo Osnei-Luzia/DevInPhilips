@@ -1,5 +1,7 @@
 package com.exercicios.exercicio.controllers;
 
+import com.exercicios.exercicio.controllers.dtos.QuizAlteracaoRequest;
+import com.exercicios.exercicio.controllers.dtos.RespostaAlteracaoRequest;
 import com.exercicios.exercicio.controllers.dtos.RespostaRequest;
 import com.exercicios.exercicio.controllers.dtos.RespostaResponse;
 import com.exercicios.exercicio.services.RespostaService;
@@ -29,9 +31,13 @@ public class RespostaController {
     public RespostaResponse listarPerguntasByQuiz(@RequestParam Long idPergunta){
         return service.buscarRespostasByPerguntas(idPergunta);
     }
-
     @PostMapping("/adicionar")
     public void criarResposta(@RequestBody RespostaRequest respostaRequest){
         service.salvarResposta(respostaRequest);
+    }
+
+    @PutMapping("/alterar")
+    public void alterarResposta(@RequestBody RespostaAlteracaoRequest respostaRequest){
+        service.alterarResposta(respostaRequest);
     }
 }
