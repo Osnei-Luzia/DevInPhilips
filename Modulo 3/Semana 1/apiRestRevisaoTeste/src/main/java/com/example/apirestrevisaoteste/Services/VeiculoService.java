@@ -4,7 +4,6 @@ import com.example.apirestrevisaoteste.Controllers.dtos.RequestCriarVeiculo;
 import com.example.apirestrevisaoteste.Models.Veiculo;
 import com.example.apirestrevisaoteste.Repositories.VeiculoRepository;
 import com.example.apirestrevisaoteste.Services.Mappers.VeiculoMapper;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,8 +19,8 @@ public class VeiculoService {
         this.mapper = mapper;
     }
 
-    public void salvar(RequestCriarVeiculo request) {
-        repository.save(mapper.map((request)));
+    public Veiculo salvar(RequestCriarVeiculo request) {
+        return repository.save(mapper.map((request)));
     }
 
     public List<Veiculo> buscar() {
