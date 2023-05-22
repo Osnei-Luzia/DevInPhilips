@@ -4,6 +4,7 @@ import com.example.apirestrevisaoteste.Controllers.dtos.RequestCriarVeiculo;
 import com.example.apirestrevisaoteste.Models.Veiculo;
 import com.example.apirestrevisaoteste.Repositories.VeiculoRepository;
 import com.example.apirestrevisaoteste.Services.Mappers.VeiculoMapper;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,25 +20,29 @@ public class VeiculoService {
         this.mapper = mapper;
     }
 
-    public void salvar(RequestCriarVeiculo request){
+    public void salvar(RequestCriarVeiculo request) {
         repository.save(mapper.map((request)));
     }
-    public List<Veiculo> buscar(){
+
+    public List<Veiculo> buscar() {
         return repository.findAll();
     }
-    public Veiculo buscarById(Long id){
-        return repository.findById(id).orElseThrow();
+
+    public Veiculo buscarById(Long id) {
+        return repository.findById(id).orElseThrow(() -> new IllegalArgumentException());
     }
-    public void alterar(RequestCriarVeiculo request, Long id){
-        Veiculo veiculo = repository.findById(id).orElseThrow();
-        if(!Objects.isNull(veiculo)){
+
+    public void alterar(RequestCriarVeiculo request, Long id) {
+        Veiculo veiculo = repository.findById(id).orElseThrow(() -> new IllegalArgumentException());
+        if (!Objects.isNull(veiculo)) {
             mapper.update(veiculo, request);
             repository.save(veiculo);
         }
     }
-    public void deletar(Long id){
-        Veiculo veiculo = repository.findById(id).orElseThrow();
-        if(!Objects.isNull(veiculo)&&veiculo.getQtdMultas()<1){
+
+    public void deletar(Long id) {
+        Veiculo veiculo = repository.findById(id).orElseThrow(() -> new IllegalArgumentException());
+        if (!Objects.isNull(veiculo) && veiculo.getQtdMultas() < 1) {
             repository.delete(veiculo);
         }
     }

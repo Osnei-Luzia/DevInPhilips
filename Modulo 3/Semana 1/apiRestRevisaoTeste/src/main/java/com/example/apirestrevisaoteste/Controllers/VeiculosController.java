@@ -38,7 +38,8 @@ public class VeiculosController {
     }
 
     @PutMapping("{id}/multas")
-    public void alterarVeiculo(@RequestBody RequestCriarVeiculo request, @PathVariable Long id){
+    public ResponseEntity alterarVeiculo(@RequestBody RequestCriarVeiculo request, @PathVariable Long id){
         service.alterar(request ,id);
+        return ResponseEntity.ok().build();
     }
 }
