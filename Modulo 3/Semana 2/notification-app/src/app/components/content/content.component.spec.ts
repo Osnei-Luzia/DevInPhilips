@@ -48,5 +48,25 @@ describe('ContentComponent', () => {
 
             expect(component.carregarNotificacoes).toHaveBeenCalled();
         })
+
+        it('atualizarLista - Should call carregarNotificacoes method with success', () => {
+            spyOn(component, 'atualizarLista');
+
+            //gera o mock para funcionamento do serviço
+            const notificacaoMock = {
+                aplicativo: '', titulo: '', descricao: '', tempoPublicacao: '',
+                imagem: '', lido: false, id: 1
+            };
+            //alteração do estado do mock anterior
+            const notificacaoEditadaMock = { ...notificacaoMock, lido: true };
+
+            //chamado de métodos do serviço
+            notificationService.editNotificationApi.and.returnValue(of({}));
+            //chamado de métodos do componente
+            component.lerNotificacao(notificacaoMock);
+
+            expect(notificationService.editNotificationApi).toHaveBeenCalledWith(notificacaoEditadaMock);
+            expect(component.atualizarLista).toHaveBeenCalled();
+        })
     })
 })
