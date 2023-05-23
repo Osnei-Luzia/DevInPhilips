@@ -4,6 +4,7 @@ import { AppModule } from "src/app/app.module";
 import { ContentComponent } from "./content.component";
 import { of } from 'rxjs';
 import { NotificationService } from 'src/app/services/notification.service';
+import { NOTIFICATIONS_MOCK } from 'src/app/utils/notifications-mock';
 
 describe('ContentComponent', () => {
 
@@ -67,6 +68,20 @@ describe('ContentComponent', () => {
 
             expect(notificationService.editNotificationApi).toHaveBeenCalledWith(notificacaoEditadaMock);
             expect(component.atualizarLista).toHaveBeenCalled();
+        })
+    })
+
+    describe('CarregarNotificacoes', () => {
+        it('carregarNotificacoes - Should return values to listaDeNotificacoes with success', () => {
+            //chamado de serviço com retorno de valores mock
+            notificationService.getNotifications.and.returnValue(of(NOTIFICATIONS_MOCK));
+
+            //chamado do método do componente
+            component.carregarNotificacoes();
+
+            expect(notificationService.getNotifications).toHaveBeenCalled();
+            //resultado do chamado do serviço esperado
+            expect(component.listaDeNotificacoes).toEqual(NOTIFICATIONS_MOCK);
         })
     })
 })
