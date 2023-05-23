@@ -84,4 +84,18 @@ describe('ContentComponent', () => {
             expect(component.listaDeNotificacoes).toEqual(NOTIFICATIONS_MOCK);
         })
     })
+    describe('RemoverNotificacao', () => {
+        it('removerNotificacao - Should call atualizarLista method with success', () => {
+            //observa método
+            spyOn(component, 'atualizarLista');
+            
+            //chamado de método do serviço com retorno "mockado" de vazio
+            notificationService.removeNotification.and.returnValue(of({}));            
+            
+            component.removerNotificacao(1);
+
+            expect(notificationService.removeNotification).toHaveBeenCalled();
+            expect(component.atualizarLista).toHaveBeenCalled(); 
+        })
+    })
 })
